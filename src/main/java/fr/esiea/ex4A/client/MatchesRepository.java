@@ -29,7 +29,7 @@ class MatchesRepository {
 
 
     final Random random = new Random();
-    Matches matchesClient() { return new Matches(names.get(random.nextInt(names.size())), twitter.get(random.nextInt(twitter.size()))); }
+    public Matches matchesClient() { return new Matches(names.get(random.nextInt(names.size())), twitter.get(random.nextInt(twitter.size()))); }
 
     @Override
     public String toString(){
