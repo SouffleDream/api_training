@@ -4,7 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import javax.validation.constraints.Pattern;
 
-public class User {
+public class UserInfo {
     private final String userName;
     private final String userMail;
     private final String userTwitter;
@@ -21,14 +21,14 @@ public class User {
     }
 
     @JsonCreator
-    public User(@JsonProperty(required = true, value="userName") String userName,
-                @JsonProperty(required = true, value="userMail") String userMail,
-                @JsonProperty(required = true, value="userTwitter") String userTwitter,
-                @JsonProperty(required = true, value="userCountry") String userCountry,
-                @JsonProperty(required = true, value="userSex") Sex userSex,
-                @JsonProperty(required = true, value="userSexPref") Sex userSexPref) {
-        this.userName = userName;
+    public UserInfo(@JsonProperty(required = true, value="userEmail") String userMail,
+                    @JsonProperty(required = true, value="userName") String userName,
+                    @JsonProperty(required = true, value="userTweeter") String userTwitter,
+                    @JsonProperty(required = true, value="userCountry") String userCountry,
+                    @JsonProperty(required = true, value="userSex") Sex userSex,
+                    @JsonProperty(required = true, value="userSexPref") Sex userSexPref) {
         this.userMail = userMail;
+        this.userName = userName;
         this.userTwitter = userTwitter;
         this.userCountry = userCountry;
         this.userSex = userSex;
@@ -37,13 +37,14 @@ public class User {
 
     @Override
     public String toString() {
-        return "User{" +
-            "userEmail='" + userMail + '\'' +
+        return "{" +
+            "userMail='" + userMail + '\'' +
             ", userName='" + userName + '\'' +
             ", userTweeter='" + userTwitter + '\'' +
             ", userCountry='" + userCountry + '\'' +
             ", userSex=" + userSex +
             ", userSexPref=" + userSexPref +
-            '}';
+            '}' + '\'';
     }
+
 }
