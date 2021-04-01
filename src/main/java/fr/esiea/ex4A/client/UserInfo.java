@@ -21,12 +21,10 @@ public class UserInfo {
     }
 
     @JsonCreator
-    public UserInfo(@JsonProperty(required = true, value="userEmail") String userMail,
-                    @JsonProperty(required = true, value="userName") String userName,
+    public UserInfo(@JsonProperty(required = true, value="userEmail") String userMail, @JsonProperty(required = true, value="userName") String userName,
                     @JsonProperty(required = true, value="userTweeter") String userTwitter,
                     @JsonProperty(required = true, value="userCountry") String userCountry,
-                    @JsonProperty(required = true, value="userSex") Sex userSex,
-                    @JsonProperty(required = true, value="userSexPref") Sex userSexPref) {
+                    @JsonProperty(required = true, value="userSex") Sex userSex, @JsonProperty(required = true, value="userSexPref") Sex userSexPref) {
         this.userMail = userMail;
         this.userName = userName;
         this.userTwitter = userTwitter;
