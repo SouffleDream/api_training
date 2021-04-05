@@ -2,6 +2,7 @@ package fr.esiea.ex4A.client;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
+
 import javax.validation.constraints.Pattern;
 
 public class UserInfo {

@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.Objects;
 
 @RestController
 public class MeekMockController {
@@ -18,7 +19,7 @@ public class MeekMockController {
     }
 
     @GetMapping(path = "/api/matches", produces = MediaType.APPLICATION_JSON_VALUE)
-    public List<Matches> getMatches(@RequestParam(name = "userName") String name, @RequestParam(name = "userCountry") String country) {
+    public List<Matches> getMatches(@RequestParam(name = "userName") String name, @RequestParam(name = "userCountry") String country) throws IOException {
         return List.of(
             matchesRepository.matchesClient(name, country),
             matchesRepository.matchesClient(name,country)
